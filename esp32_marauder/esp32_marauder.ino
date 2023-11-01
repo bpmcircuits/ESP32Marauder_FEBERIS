@@ -203,6 +203,8 @@ void setup()
     
     #ifdef XIAO_ESP32_S3
       Serial1.begin(115200, SERIAL_8N1, XIAO_RX1, XIAO_TX1);
+    #elif defined(MARAUDER_FEBERIS_BOARD)
+      Serial2.begin(115200, SERIAL_8N1, FEBERIS_RX2, FEBERIS_TX2);
     #else
       Serial1.begin(115200);
     #endif

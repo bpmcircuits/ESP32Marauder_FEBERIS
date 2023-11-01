@@ -3,6 +3,7 @@
 
 #include <MicroNMEA.h>
 #include <SoftwareSerial.h>
+#include <TinyGPSPlus.h>
 
 #include "configs.h"
 

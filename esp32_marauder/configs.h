@@ -9,7 +9,7 @@
   //#define WRITE_PACKETS_SERIAL
   
   //// BOARD TARGETS
-  #define MARAUDER_M5STICKC
+  //define MARAUDER_M5STICKC
   //#define MARAUDER_MINI
   //#define MARAUDER_V4
   //#define MARAUDER_V6
@@ -20,9 +20,10 @@
   //#define ESP32_LDDB
   //#define MARAUDER_DEV_BOARD_PRO
   //#define XIAO_ESP32_S3
+  #define MARAUDER_FEBERIS_BOARD
   //// END BOARD TARGETS
 
-  #define MARAUDER_VERSION "v0.13.4"
+  #define MARAUDER_VERSION "v0.13.3"
 
  //// BOARD FEATURES
   #ifdef MARAUDER_M5STICKC
@@ -165,6 +166,20 @@
     //#define HAS_TEMP_SENSOR
     //#define HAS_GPS
   #endif
+
+  #ifdef MARAUDER_FEBERIS_BOARD
+    #define FLIPPER_ZERO_HAT
+    //#define HAS_BATTERY
+    #define HAS_BT
+    //#define HAS_BUTTONS
+    #define HAS_NEOPIXEL_LED
+    //#define HAS_PWR_MGMT
+    //#define HAS_SCREEN
+    //#define HAS_SD
+    //#define USE_SD
+    //#define HAS_TEMP_SENSOR
+    //#define HAS_GPS
+  #endif
   //// END BOARD FEATURES
 
   //// FLIPPER ZERO HAT SETTINGS
@@ -175,6 +190,10 @@
     //#endif
 
     #ifdef XIAO_ESP32_S3
+      #define USE_FLIPPER_SD
+    #endif
+
+    #ifdef MARAUDER_FEBERIS_BOARD
       #define USE_FLIPPER_SD
     #endif
 
@@ -737,6 +756,8 @@
     #define MEM_LOWER_LIM 20000
   #elif defined(XIAO_ESP32_S3)
     #define MEM_LOWER_LIM 20000
+  #elif defined(MARAUDER_FEBERIS_BOARD)
+    #define MEM_LOWER_LIM 20000
   #endif
   //// END MEMORY LOWER LIMIT STUFF
 
@@ -759,6 +780,13 @@
     #ifdef USE_FLIPPER_SD
       #define XIAO_RX1 1
       #define XIAO_TX1 2
+    #endif
+  #endif
+
+  #ifdef MARAUDER_FEBERIS_BOARD
+    #ifdef USE_FLIPPER_SD
+      #define FEBERIS_RX2 16
+      #define FEBERIS_TX2 17
     #endif
   #endif
   //// END BOARD PIN OVERRIDES
@@ -784,6 +812,8 @@
     #define MAX_HTML_SIZE 20000
   #elif defined(XIAO_ESP32_S3)
     #define MAX_HTML_SIZE 20000
+  #elif defined(MARAUDER_FEBERIS_BOARD)
+    #define MAX_HTML_SIZE 11400
   #else
     #define MAX_HTML_SIZE 20000
   #endif
@@ -830,6 +860,11 @@
       #define GPS_TX 33
       #define GPS_RX 32
       #define mac_history_len 512
+    #elif defined(MARAUDER_FEBERIS_BOARD)
+      #define GPS_SERIAL_INDEX 1
+      #define GPS_TX 4
+      #define GPS_RX 13
+      #define mac_history_len 512
     #endif
   #else
     #define mac_history_len 512
@@ -844,6 +879,8 @@
   #elif defined(MARAUDER_KIT)
     #define MARAUDER_TITLE_BYTES 13578
   #elif defined(MARAUDER_MINI)
+    #define MARAUDER_TITLE_BYTES 13578
+  #elif defined(MARAUDER_FEBERIS_BOARD)
     #define MARAUDER_TITLE_BYTES 13578
   #else
     #define MARAUDER_TITLE_BYTES 13578

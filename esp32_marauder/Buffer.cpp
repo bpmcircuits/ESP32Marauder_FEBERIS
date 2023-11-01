@@ -222,25 +222,47 @@ void Buffer::forceSaveSerial() {
   saving = true;
   writing = false;
 
-  if(useA){
-    if(bufSizeB > 0){
-      Serial1.write(bufB, bufSizeB);
-      bufSizeB = 0;
+  #ifdef MARAUDER_FEBERIS_BOARD
+    if(useA){
+      if(bufSizeB > 0){
+        Serial2.write(bufB, bufSizeB);
+        bufSizeB = 0;
+      }
+      if(bufSizeA > 0){
+        Serial2.write(bufA, bufSizeA);
+        bufSizeA = 0;
+      }
+    } else {
+      if(bufSizeA > 0){
+        Serial2.write(bufA, bufSizeA);
+        bufSizeA = 0;
+      }
+      if(bufSizeB > 0){
+        Serial2.write(bufB, bufSizeB);
+        bufSizeB = 0;
+      }
     }
-    if(bufSizeA > 0){
-      Serial1.write(bufA, bufSizeA);
-      bufSizeA = 0;
+  #else
+    if(useA){
+      if(bufSizeB > 0){
+        Serial1.write(bufB, bufSizeB);
+        bufSizeB = 0;
+      }
+      if(bufSizeA > 0){
+        Serial1.write(bufA, bufSizeA);
+        bufSizeA = 0;
+      }
+    } else {
+      if(bufSizeA > 0){
+        Serial1.write(bufA, bufSizeA);
+        bufSizeA = 0;
+      }
+      if(bufSizeB > 0){
+        Serial1.write(bufB, bufSizeB);
+        bufSizeB = 0;
+      }
     }
-  } else {
-    if(bufSizeA > 0){
-      Serial1.write(bufA, bufSizeA);
-      bufSizeA = 0;
-    }
-    if(bufSizeB > 0){
-      Serial1.write(bufB, bufSizeB);
-      bufSizeB = 0;
-    }
-  }
+  #endif
 
   saving = false;
   writing = true;
