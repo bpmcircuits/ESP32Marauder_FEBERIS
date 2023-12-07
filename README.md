@@ -8,4 +8,4 @@
 
 ## How to update FEBERIS
 
-![Alt text]([image link](https://github.com/bpmcircuits/ESP32Marauder_FEBERIS/blob/master/pictures/UpdateInstruction_ESPFlasher.png)https://github.com/bpmcircuits/ESP32Marauder_FEBERIS/blob/master/pictures/UpdateInstruction_ESPFlasher.png)
+![Alt text](ESP32Marauder_FEBERIS/pictures/UpdateInstruction_ESPFlasher.png)https://github.com/bpmcircuits/ESP32Marauder_FEBERIS/blob/master/pictures/UpdateInstruction_ESPFlasher.png)
