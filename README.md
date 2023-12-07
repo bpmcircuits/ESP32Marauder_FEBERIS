@@ -22,10 +22,6 @@
     
 [![Build and Push](https://github.com/justcallmekoko/ESP32Marauder/actions/workflows/build_push.yml/badge.svg)](https://github.com/justcallmekoko/ESP32Marauder/actions/workflows/build_push.yml)
 
-## Getting Started
-Download the [latest release](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) of the firmware.  
+## How to update FEBERIS
 
-Check out the project [wiki](https://github.com/justcallmekoko/ESP32Marauder/wiki) for a full overview of the ESP32 Marauder
-
-# For Sale Now
-You can buy the ESP32 Marauder using [this link](https://www.tindie.com/products/justcallmekoko/esp32-marauder/)
+<p align="center"><img alt="Marauder logo" src="[https://github.com/justcallmekoko/ESP32Marauder/blob/master/pictures/marauder3L.jpg](https://github.com/bpmcircuits/ESP32Marauder_FEBERIS/blob/master/pictures/UpdateInstruction_ESPFlasher.png)https://github.com/bpmcircuits/ESP32Marauder_FEBERIS/blob/master/pictures/UpdateInstruction_ESPFlasher.png?raw=true" width="300"></p>
